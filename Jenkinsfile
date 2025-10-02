@@ -14,14 +14,6 @@ pipeline {
     }
 
     stages {
-//         stage('Setup Maven') {
-//             steps {
-//                 script {
-//                     def mvnHome = tool name: 'Maven3', type: 'maven'
-//                     env.PATH = "${mvnHome}/bin:${env.PATH}"
-//                 }
-//             }
-//         }
 
         stage('Checkout') {
             steps {
@@ -76,10 +68,11 @@ pipeline {
             }
         }
 
-    post {
-        always {
-            junit(testResults: '**/target/surefire-reports/*.xml', allowEmptyResults: true)
-            jacoco(execPattern: '**/target/jacoco.exec', classPattern: '**/target/classes', sourcePattern: '**/src/main/java', inclusionPattern: '**/*.class', exclusionPattern: '')
+        post {
+            always {
+                junit(testResults: '**/target/surefire-reports/*.xml', allowEmptyResults: true)
+                jacoco(execPattern: '**/target/jacoco.exec', classPattern: '**/target/classes', sourcePattern: '**/src/main/java', inclusionPattern: '**/*.class', exclusionPattern: '')
+            }
         }
     }
 
