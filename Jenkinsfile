@@ -25,7 +25,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/vickneee/javafx_with_mariadb.git'
+                git branch: 'main', url: 'https://github.com/vickneee/week7_javafx_with_mariadb.git'
             }
         }
 
