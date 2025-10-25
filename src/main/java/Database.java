@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class Database {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/javafx_mariadb";
+    private static final String URL = "jdbc:mysql://localhost:3306/temperatureconverter_mariadb";
     private static final String USER = "victoria";
     private static final String PASSWORD = "victoria";
 
